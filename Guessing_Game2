@@ -1,0 +1,32 @@
+#====================GUESSING GAME=========================
+
+
+print 'Hello what is your name?'
+name = raw_input()
+
+SecretNumber = random.randint(1,20)
+print 'Well, ' + name + ', I\'m thinking of a number between 1 - 20.'
+
+print 'Debuggin' + str(SecretNumber) + 'is the number' 
+for guessesTaken in range (1,7):
+	print 'Take a guess'
+	guess = int(raw_input())
+
+	if guess < SecretNumber:
+		print 'Your guess is to low'
+		print 'Try again'
+	elif guess > SecretNumber:
+		print 'Your guess is to high'
+		print 'Try again'
+	else:
+		break
+		
+if guess == SecretNumber:
+	print 'Correct ' + name + '!. You win $1,000,000.00'
+	print 'It took you ' + str(guessesTaken) + ' guesses to get it right'
+
+else:
+	print 'Wrong!'
+	print 'You are WRONG ' + name.upper() + '!'
+	print 'I was thinking of ' + str(SecretNumber)
+	print 'You will be feed to the HOUNDS!'
